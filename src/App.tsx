@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
+import { Global } from '@emotion/react';
+import styled from '@emotion/styled';
 import { NavermapsProvider } from 'react-naver-maps';
-import { Heading1 } from '@/components/Text.tsx';
-import Wrapper from '@/components/Wrapper.tsx';
 import Account from '@/layout/Account/Account.tsx';
 import Container from '@/layout/Container.tsx';
 import FloatingBar from '@/layout/FloatingBar/FloatingBar.tsx';
@@ -39,26 +39,37 @@ function App() {
   return (
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     <NavermapsProvider ncpClientId={ncpClientId}>
+      <Global
+        styles={`
+          body {
+            font-family: 'Noto Serif KR', serif;
+            background: #fff;
+            color: #000;
+            margin: 0;
+            padding: 0;
+          }
+        `}
+      />
       <Container>
-        <Wrapper>
+        <SectionWrapper>
           <Main />
-        </Wrapper>
-        <Wrapper>
-          <Heading1>모시는 글</Heading1>
+        </SectionWrapper>
+        <SectionWrapper>
+          <SectionTitle>모시는 글</SectionTitle>
           <Invitation />
-        </Wrapper>
-        <Wrapper ref={galleryRef}>
-          <Heading1>Gallery</Heading1>
+        </SectionWrapper>
+        <SectionWrapper ref={galleryRef}>
+          <SectionTitle>Gallery</SectionTitle>
           <GalleryWrap />
-        </Wrapper>
-        <Wrapper>
-          <Heading1>마음 전하실 곳</Heading1>
+        </SectionWrapper>
+        <SectionWrapper>
+          <SectionTitle>마음 전하실 곳</SectionTitle>
           <Account />
-        </Wrapper>
-        <Wrapper>
-          <Heading1>오시는 길</Heading1>
+        </SectionWrapper>
+        <SectionWrapper>
+          <SectionTitle>오시는 길</SectionTitle>
           <Location />
-        </Wrapper>
+        </SectionWrapper>
         <FloatingBar isVisible={isVisible} />
       </Container>
     </NavermapsProvider>
@@ -66,3 +77,19 @@ function App() {
 }
 
 export default App;
+
+const SectionWrapper  = styled.section`
+  padding: 40px 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+`;
