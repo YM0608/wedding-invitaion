@@ -39,37 +39,36 @@ const HostInfo = ({ person }: { person: BrideAndGroom }) => {
   );
 };
 
-const HighlightedName = styled.span`
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #4f4f4f;
-  margin-right: 5px;
-`;
-
 const HostContainer = styled.div`
-  gap: 8px;
-  font-family: HSSanTokki20-Regular, serif;
+    gap: 8px;
 `;
 
 const HostDetails = styled.div`
-  padding: 0 55px;
-  justify-content: center;
-  white-space: nowrap;
-  display: flex;
-  gap: 6px;
-  text-align: center;
-  align-items: center;
-  font-weight: 700;
+    padding: 0 55px;
+    justify-content: center;
+    white-space: nowrap;
+    display: flex;
+    gap: 6px;
+    text-align: center;
+    align-items: center;
+    font-weight: 500;
+`;
+
+const HighlightedName = styled.span`
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #000;
+    margin-left: 6px; // 살짝 띄움
 `;
 
 const RelationText = styled.div`
-  font-style: normal;
-  line-height: 26px;
-  width: 50px;
-  display: flex;
-  gap: 6px;
+    font-style: normal;
+    line-height: 26px;
+    width: 50px;
+    display: flex;
+    gap: 6px;
 `;
 
 const Relation = styled.div`
-  width: inherit;
+    width: inherit;
 `;

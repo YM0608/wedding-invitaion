@@ -15,11 +15,12 @@ export const Heading2 = styled.p`
 `;
 
 export const PointTitle = styled.p`
-  font-family: HSSanTokki20-Regular, serif;
-  line-height: 1;
-  margin: 0;
-  color: #e88ca6;
-  white-space: pre-line;
+    font-family: 'Noto Serif KR', serif;
+    line-height: 1.4;
+    margin: 0;
+    color: #000;
+    font-weight: 600;
+    white-space: pre-line;
 `;
 
 export const Paragraph = styled.p`
